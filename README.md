@@ -7,3 +7,13 @@ on multiple mathematical reasoning tasks, validating the effectiveness of combin
 with modern LLMs to systematically discover high-quality solutions.
 
 All dataset benchmarks used are seen in their respective folders. The TTA method is implemented in GSM8K as "astarllm.py".
+
+
+# VLLM
+
+python -m vllm.entrypoints.openai.api_server \
+    --model Qwen/Qwen2.5-Math-7B \
+    --port 8000 \
+    --dtype bfloat16 \
+    --gpu-memory-utilization 0.95 \
+    --disable-log-requests
